@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposePlayground</string>
+    <string name="monitor">Monitor</string>
 </resources>
