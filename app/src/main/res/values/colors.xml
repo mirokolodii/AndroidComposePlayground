@@ -5,9 +5,15 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#9c404c</color>
     <color name="onPrimary">#ffffff</color>
     <color name="surface">#ffdadb</color>
+
+    <!-- statuses -->
+    <color name="draft">#D5CABD</color>
+    <color name="in_progress">#FF9671</color>
+    <color name="complete">#008F7A</color>
 </resources>

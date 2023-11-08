@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background_info_view"
-    android:gravity="center"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
     >
@@ -18,7 +16,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/background_label"
         android:backgroundTint="#e8c08e"
-        android:drawableLeft="@drawable/baseline_monitor_24"
+        android:drawableLeft="@drawable/ic_arrow_circle_right"
         android:drawablePadding="8dp"
         android:drawableTint="@color/white"
         android:paddingHorizontal="8dp"
