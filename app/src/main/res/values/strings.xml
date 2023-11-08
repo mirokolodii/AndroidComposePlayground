@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ComposePlayground</string>
     <string name="monitor">Monitor</string>
+    <string name="draft">Draft</string>
+    <string name="in_progress">In Progress</string>
+    <string name="complete">Complete</string>
+    <string name="create">Create</string>
+    <string name="open">Open</string>
+    <string name="specification">Specification:</string>
+    <string name="item_description">%1$s: %2$s</string>
 </resources>

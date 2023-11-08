@@ -16,14 +16,14 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/background_label"
         android:backgroundTint="#e8c08e"
-        android:drawableLeft="@drawable/ic_arrow_circle_right"
         android:drawablePadding="8dp"
-        android:drawableTint="@color/white"
         android:paddingHorizontal="8dp"
         android:text="@string/monitor"
         android:textColor="@android:color/white"
+        app:drawableTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:drawableLeft="@drawable/ic_arrow_circle_right"
         />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:text="Specification:"
+        android:text="@string/specification"
         android:textAppearance="@style/TextBig.Bold"
         android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,66 +39,16 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <TextView
-        android:id="@+id/line1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Size: 24''"
-        android:textAppearance="@style/TextNormal"
-        android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        />
-
-    <TextView
-        android:id="@+id/line2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Weight: 5 kg"
-        android:textAppearance="@style/TextNormal"
-        android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line1"
-        />
-
-    <TextView
-        android:id="@+id/line3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Battery: N/A"
-        android:textAppearance="@style/TextNormal"
-        android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line2"
-        />
-
-    <TextView
-        android:id="@+id/line4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Resolution: 1920 x 1200"
-        android:textAppearance="@style/TextNormal"
-        android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line3"
-        />
-
     <Button
         android:id="@+id/button"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        tools:text="@string/create"
         />
 
 </merge>

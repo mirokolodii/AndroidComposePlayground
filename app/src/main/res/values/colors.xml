@@ -10,7 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#9c404c</color>
     <color name="onPrimary">#ffffff</color>
-    <color name="surface">#ffdadb</color>
+    <color name="surface">#F6EEE0</color>
 
     <!-- statuses -->
     <color name="draft">#D5CABD</color>
