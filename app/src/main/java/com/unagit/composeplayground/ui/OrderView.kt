@@ -46,22 +46,25 @@ class OrderView @JvmOverloads constructor(
         background = context.drawable(R.drawable.background_info_view)
     }
 
-    fun init(status: Status) {
-        initItems()
+    fun init(status: Status, items: Map<String, String>) {
+        initItems(items)
         initLabel(status)
         initButton(status)
     }
 
-    private fun initItems() {
-        val item = "Dimension" to "34x12x8"
-        val textView = TextView(context).apply {
-            id = generateViewId()
-            text = context.getString(string.item_description, item.first, item.second)
-            setTextColor(context.color(R.color.primary))
-            setTextAppearance(R.style.TextNormal)
+    private fun initItems(items: Map<String, String>) {
+        var topViewId = binding.title.id
+        items.forEach { item ->
+            val textView = TextView(context).apply {
+                id = generateViewId()
+                text = context.getString(string.item_description, item.key, item.value)
+                setTextColor(context.color(R.color.primary))
+                setTextAppearance(R.style.TextNormal)
+            }
+            addView(textView)
+            setConstraints(view = textView, topViewId = topViewId)
+            topViewId = id
         }
-        addView(textView)
-        setConstraints(view = textView, topViewId = binding.title.id)
     }
 
     private fun initLabel(status: Status) {
@@ -119,7 +122,7 @@ enum class Status {
 @Preview
 @Composable
 fun CustomViewPreview(
-    @PreviewParameter(CustomViewPreviewParameterProvider::class) viewState: Status
+    @PreviewParameter(ViewStateProvider::class) params: PreviewParams,
 ) {
     AndroidView(
         modifier = Modifier
@@ -128,12 +131,36 @@ fun CustomViewPreview(
             .padding(8.dp),
         factory = { context ->
             OrderView(context).apply {
-                init(viewState)
+                init(params.status, params.items)
             }
         },
     )
 }
 
-class CustomViewPreviewParameterProvider : PreviewParameterProvider<Status> {
-    override val values: Sequence<Status> = Status.values().asSequence()
+class ViewStateProvider : PreviewParameterProvider<PreviewParams> {
+    override val values: Sequence<PreviewParams> = buildList {
+        Status.values().forEachIndexed { index, status ->
+            add(PreviewParams(status = status, items = previewItems[index]))
+        }
+    }.asSequence()
 }
+
+class PreviewParams(
+    val status: Status,
+    val items: Map<String, String>,
+)
+
+private val previewItems = listOf(
+    mapOf(
+        "Dimension" to "34x12x8",
+    ),
+    mapOf(
+        "Display" to "6.4 inches",
+        "Resolution" to "1080x2340"
+    ),
+    mapOf(
+        "OS" to "Android 10",
+        "Main camera" to "50 MP, f/1.8",
+        "Selfie camera" to "32 MP, f/2.2",
+    ),
+)
