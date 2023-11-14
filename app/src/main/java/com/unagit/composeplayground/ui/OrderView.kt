@@ -63,7 +63,7 @@ class OrderView @JvmOverloads constructor(
             }
             addView(textView)
             setConstraints(view = textView, topViewId = topViewId)
-            topViewId = id
+            topViewId = textView.id
         }
     }
 
