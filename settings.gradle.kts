@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposePlayground"
 include(":app")
-include(":previews-app")
+include(":preview")
+include(":common")

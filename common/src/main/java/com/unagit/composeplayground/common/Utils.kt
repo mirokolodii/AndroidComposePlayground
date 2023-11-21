@@ -1,4 +1,4 @@
-package com.unagit.composeplayground
+package com.unagit.composeplayground.common
 
 import android.content.Context
 import android.graphics.drawable.Drawable

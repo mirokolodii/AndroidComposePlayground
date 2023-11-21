@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ComposePlayground</string>
-    <string name="monitor">Monitor</string>
     <string name="draft">Draft</string>
     <string name="in_progress">In Progress</string>
     <string name="complete">Complete</string>

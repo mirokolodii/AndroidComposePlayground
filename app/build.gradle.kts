@@ -39,7 +39,7 @@ android {
         viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
     packaging {
         resources {
@@ -49,6 +49,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
+    implementation(project(":preview"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
