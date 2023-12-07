@@ -11,6 +11,8 @@
     <color name="primary">#9c404c</color>
     <color name="onPrimary">#ffffff</color>
     <color name="surface">#F6EEE0</color>
+    <color name="onSurface">#666666</color>
+
 
     <!-- statuses -->
     <color name="draft">#D5CABD</color>

@@ -3,6 +3,7 @@
     <string name="draft">Draft</string>
     <string name="in_progress">In Progress</string>
     <string name="complete">Complete</string>
+    <string name="search_placeholder">Search</string>
     <string name="create">Create</string>
     <string name="open">Open</string>
     <string name="specification">Specification:</string>

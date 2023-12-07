@@ -1,4 +1,4 @@
-package com.unagit.composeplayground.ui
+package com.unagit.composeplayground.view_preview
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -30,9 +30,9 @@ import com.unagit.composeplayground.common.dpToPx
 import com.unagit.composeplayground.common.drawable
 import com.unagit.composeplayground.preview.R
 import com.unagit.composeplayground.preview.databinding.ViewOrderBinding
-import com.unagit.composeplayground.ui.Status.COMPLETE
-import com.unagit.composeplayground.ui.Status.DRAFT
-import com.unagit.composeplayground.ui.Status.IN_PROGRESS
+import com.unagit.composeplayground.view_preview.Status.COMPLETE
+import com.unagit.composeplayground.view_preview.Status.DRAFT
+import com.unagit.composeplayground.view_preview.Status.IN_PROGRESS
 
 class OrderView @JvmOverloads constructor(
     context: Context,
