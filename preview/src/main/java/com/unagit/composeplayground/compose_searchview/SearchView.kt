@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
@@ -21,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,7 +36,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.unagit.composeplayground.preview.R
 import com.unagit.composeplayground.preview.R.color
-
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun SearchView(
@@ -45,7 +48,7 @@ fun SearchView(
 ) {
     var filteredItems: List<ListItem> by remember { mutableStateOf(items) }
 
-    Column(modifier = modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxWidth()) {
 
         SearchBox(
             onBackClick = onBackClick,
@@ -72,8 +75,6 @@ fun SearchView(
 )
 @Composable
 fun SearchViewPreview() {
-    val context = LocalContext.current
-
     val items = listOf(
         ListItem { "Item 1" },
         ListItem { "Item 3" },
@@ -81,14 +82,30 @@ fun SearchViewPreview() {
         ListItem { "Item 321" },
     )
 
-    Box(modifier = Modifier.background(color = colorResource(id = color.white))) {
+    var clickTest by remember { mutableStateOf("") }
+    var isClickTextVisible by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
+
+    Column(
+        modifier = Modifier.background(color = colorResource(id = color.white)),
+        verticalArrangement = Arrangement.SpaceBetween
+    ) {
         SearchView(
             modifier = Modifier,
             items = items,
             onItemClick = {
-                Toast.makeText(context, "${it.getName()} clicked", Toast.LENGTH_SHORT).show()
+                scope.launch {
+                    clickTest = "${it.getName()} clicked"
+                    isClickTextVisible = true
+                    delay(2000)
+                    isClickTextVisible = false
+                }
             },
             onBackClick = {},
         )
+
+        if (isClickTextVisible) {
+            Text(text = clickTest)
+        }
     }
 }

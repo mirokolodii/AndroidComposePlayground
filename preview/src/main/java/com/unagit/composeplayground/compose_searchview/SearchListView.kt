@@ -54,7 +54,6 @@ fun SearchListView(
             Text(
                 modifier = Modifier
                     .clickable { onItemClick(item) }
-                    .background(color = Color(0xfffffbd1))
                     .padding(8.dp)
                     .fillMaxWidth(),
                 text = item.getName()
