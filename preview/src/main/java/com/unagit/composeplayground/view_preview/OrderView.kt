@@ -139,7 +139,7 @@ fun CustomViewPreview(
 
 class ViewStateProvider : PreviewParameterProvider<PreviewParams> {
     override val values: Sequence<PreviewParams> = buildList {
-        Status.values().forEachIndexed { index, status ->
+        Status.entries.forEachIndexed { index, status ->
             add(PreviewParams(status = status, items = previewItems[index]))
         }
     }.asSequence()
