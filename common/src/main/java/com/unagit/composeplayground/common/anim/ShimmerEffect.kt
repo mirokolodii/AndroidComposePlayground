@@ -25,7 +25,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun shimmerBrush(
-    brushColor: Color,
+    brushColor: Color = Color.White,
     customColors: List<Color> = emptyList(),
     iterations: Int = 0,
     widthOfShadowBrushDp: Dp = 300.dp,
